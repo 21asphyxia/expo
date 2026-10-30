@@ -790,7 +790,7 @@ class FileDownloader(
     logger.error(
       error.localizedMessageWithCauseLocalizedMessage(),
       cause,
-      UpdatesErrorCode.AssetsFailedToLoad,
+      UpdatesErrorCode.forLoadFailure(cause, otherwise = UpdatesErrorCode.AssetsFailedToLoad),
       requestedUpdate?.loggingId,
       asset.key
     )
